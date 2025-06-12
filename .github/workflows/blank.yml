@@ -25,19 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - uses: bazel-contrib/setup-bazel@0.15.0
-        with:
-          # Avoid downloading Bazel every time.
-          bazelisk-cache: true
-          # Store build cache per workflow.
-          disk-cache: ${{ github.workflow }}
-          # Share repository cache between workflows.
-          repository-cache: true
-
-      # Runs a set of commands using the runners shell
-      - name: Build targets
-        run: bazel build //cpp-package:greetings
-
       - name: Zip and publish compponent
         run: git archive --format=tar.gz HEAD > component-a.tar.gz
         
@@ -46,6 +33,8 @@ jobs:
         with:
           name: component-a
           path: component-a.tar.gz
+
+      - run: ls
 
       - name: Create release
         run: gh release upload 0.1.0 component-a.tar.gz
