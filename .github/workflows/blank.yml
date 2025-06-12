@@ -39,8 +39,8 @@ jobs:
         run: bazel build //cpp-package:greetings
 
       - name: Zip and publish compponent
-        run: tar -cvz -f component-a.tar.gz .
-
+        run: git archive --format=tar.gz
+        
       - name: Upload component
         uses: actions/upload-artifact@v4
         with:
