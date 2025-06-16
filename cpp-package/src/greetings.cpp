@@ -1,4 +1,4 @@
-#include "greetings.h"
+#include "cpp-package/include/greetings.h"
 #include <iostream>
 
 using namespace greetings;
