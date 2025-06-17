@@ -46,11 +46,6 @@ jobs:
           name: component-a
           path: component-a.tar.gz
 
-      - run: ls
-
-      - name: Create release
-        run: gh release create 
-
       - name: Create release
         run: |
           gh release create v0.0.${{ github.sha }} --generate-notes
