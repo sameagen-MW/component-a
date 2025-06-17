@@ -1,6 +1,7 @@
 module(name = "component-a", version = "1.0")
 
 bazel_dep(name = "rules_cc", version = "0.0.17")
+bazel_dep(name = "googletest", version = "1.17.0")
 bazel_dep(name = "aspect_rules_js", version = "2.3.7")
 
 ####### Node.js version #########

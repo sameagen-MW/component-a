@@ -3,5 +3,5 @@
 using namespace std;
 
 namespace greetings {
-    void greet(string name);
+    string greet(string name);
 }

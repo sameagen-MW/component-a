@@ -4,7 +4,7 @@
 using namespace std;
 
 namespace greetings {
-    void greet(string name) {
-        cout << "Hello " << name << "!";
+    string greet(string name) {
+        return "Hello " + name + "!";
     }
 }
