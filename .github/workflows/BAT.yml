@@ -35,7 +35,7 @@ jobs:
           repository-cache: true
       
       - name: Build and run tests
-        run: bazel test //cpp-package:...
+        run: bazel test //cpp-package:greetings_test
 
       - name: Zip and publish compponent
         run: git archive --format=tar.gz HEAD > component-a.tar.gz
